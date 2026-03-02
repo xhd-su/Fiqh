@@ -6,75 +6,84 @@
 <title>Mémoire de Jurisprudence Islamique</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background-color: #0f3d2e;
-    color: #f4e6a2;
-    line-height: 1.6;
-}
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background-color: #0f3d2e;
+        color: #f4e6a2;
+        line-height: 1.6;
+    }
 
-header {
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 1px solid rgba(232, 216, 139, 0.2);
-}
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        border-bottom: 1px solid #e8d88b33;
+    }
 
-h1 {
-    margin: 0;
-    font-size: 2rem;
-    letter-spacing: 1px;
-}
+    h1 {
+        margin: 0;
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
 
-.subtitle {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    margin-top: 10px;
-}
+    .subtitle {
+        font-size: 0.95rem;
+        opacity: 0.8;
+        margin-top: 10px;
+    }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-}
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
 
-.topic {
-    background-color: #123c2f;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .topic {
+        background-color: #123c2f;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-.topic:hover {
-    background-color: #174d3b;
-}
+    .topic:hover {
+        background-color: #174d3b;
+    }
 
-.topic h2 {
-    margin: 0;
-}
+    .topic h2 {
+        margin: 0;
+    }
 
-.content {
-    display: none;
-    margin-top: 15px;
-    font-size: 0.95rem;
-}
+    .content {
+        display: none;
+        margin-top: 15px;
+        font-size: 0.95rem;
+    }
 
-.section-title {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #e8d88b;
-}
+    .section-title {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #e8d88b;
+    }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    border-top: 1px solid rgba(232, 216, 139, 0.2);
-    margin-top: 40px;
-}
+    footer {
+        text-align: center;
+        padding: 30px;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        border-top: 1px solid #e8d88b33;
+        margin-top: 40px;
+    }
+
+    a {
+        color: #e8d88b;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 </style>
 </head>
 
@@ -89,6 +98,7 @@ footer {
 
 <div class="container">
 
+    <!-- Sujet 1 -->
     <div class="topic" onclick="toggleContent(this)">
         <h2>Riba (Usure)</h2>
         <div class="content">
@@ -97,14 +107,43 @@ footer {
             Augmentation spécifique interdite dans certaines transactions définies par les textes.
 
             <div class="section-title">2. Textes fondamentaux</div>
-            - Sourate Al-Baqara 275-279<br>
-            - Hadith des six catégories
+            - Sourate Al-Baqara 275-279  
+            - Hadith des six catégories (Muslim)
 
-            <div class="section-title">3. Avis retenu</div>
+            <div class="section-title">3. Avis des écoles</div>
+            Résumé synthétique des positions des quatre madhahib.
+
+            <div class="section-title">4. Avis retenu</div>
             Interdiction des intérêts bancaires contemporains.
 
+            <div class="section-title">5. Arguments</div>
+            - Généralité du texte coranique  
+            - Qiyās sur riba an-nasi'ah  
+            - Absence de distinction textuelle entre ancien et moderne  
+
+            <div class="section-title">6. Tarjīḥ</div>
+            L’avis apparaît plus fort en raison de la clarté des textes et du principe سد الذرائع.
+
+        </div>
+    </div>
+
+    <!-- Sujet 2 -->
+    <div class="topic" onclick="toggleContent(this)">
+        <h2>Voile</h2>
+        <div class="content">
+
+            <div class="section-title">1. Textes</div>
+            Sourate An-Nur 31, Al-Ahzab 59.
+
+            <div class="section-title">2. Divergences</div>
+            Visage inclus ou non.
+
+            <div class="section-title">3. Avis retenu</div>
+            Obligation du hijab couvrant tout sauf visage et mains.
+
             <div class="section-title">4. Tarjīḥ</div>
-            L’avis apparaît plus fort en raison de la généralité des textes.
+            Pondération basée sur la compréhension des compagnons et la pratique majoritaire.
+
         </div>
     </div>
 
@@ -117,11 +156,7 @@ footer {
 <script>
 function toggleContent(element) {
     const content = element.querySelector(".content");
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
-    }
+    content.style.display = content.style.display === "block" ? "none" : "block";
 }
 </script>
 
