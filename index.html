@@ -9,81 +9,95 @@
     body {
         margin: 0;
         font-family: "Georgia", serif;
-        background-color: #0f3d2e;
-        color: #f4e6a2;
-        line-height: 1.6;
+        background-color: #0b2e24; /* vert plus foncé */
+        color: #fff4b8; /* texte plus lumineux */
+        line-height: 1.7;
     }
 
     header {
         text-align: center;
-        padding: 40px 20px;
-        border-bottom: 1px solid #e8d88b33;
+        padding: 50px 20px;
+        border-bottom: 1px solid rgba(255, 244, 184, 0.2);
     }
 
     h1 {
         margin: 0;
-        font-size: 2rem;
+        font-size: 2.2rem;
         letter-spacing: 1px;
     }
 
     .subtitle {
-        font-size: 0.95rem;
-        opacity: 0.8;
-        margin-top: 10px;
+        font-size: 1rem;
+        opacity: 0.85;
+        margin-top: 12px;
     }
 
     .container {
-        max-width: 900px;
+        max-width: 950px;
         margin: auto;
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
 
     .topic {
-        background-color: #123c2f;
-        margin-bottom: 20px;
-        padding: 20px;
-        border-radius: 8px;
+        background-color: #113c2f;
+        margin-bottom: 25px;
+        padding: 25px;
+        border-radius: 10px;
         cursor: pointer;
-        transition: 0.3s;
+        transition: 0.3s ease;
+        overflow: hidden;
     }
 
     .topic:hover {
-        background-color: #174d3b;
+        background-color: #164a3a;
     }
 
     .topic h2 {
         margin: 0;
+        font-size: 1.4rem;
     }
 
     .content {
-        display: none;
-        margin-top: 15px;
-        font-size: 0.95rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s ease, opacity 0.4s ease;
+        opacity: 0;
+    }
+
+    .content.open {
+        opacity: 1;
+        margin-top: 20px;
     }
 
     .section-title {
-        margin-top: 20px;
+        margin-top: 25px;
         font-weight: bold;
-        color: #e8d88b;
+        color: #ffe97a;
+    }
+
+    blockquote {
+        margin: 15px 0;
+        padding: 15px;
+        background-color: #0f352a;
+        border-left: 4px solid #ffe97a;
+        font-style: italic;
+    }
+
+    .reference {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        margin-top: 5px;
     }
 
     footer {
         text-align: center;
-        padding: 30px;
-        font-size: 0.8rem;
+        padding: 40px;
+        font-size: 0.85rem;
         opacity: 0.6;
-        border-top: 1px solid #e8d88b33;
-        margin-top: 40px;
+        border-top: 1px solid rgba(255, 244, 184, 0.2);
+        margin-top: 50px;
     }
 
-    a {
-        color: #e8d88b;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
 </style>
 </head>
 
@@ -92,57 +106,101 @@
 <header>
     <h1>Mémoire de Jurisprudence Islamique</h1>
     <div class="subtitle">
-        Notes personnelles de fiqh – Étude, preuves et tarjīḥ
+        Étude personnelle – Preuves – Divergences – Tarjīḥ
     </div>
 </header>
 
 <div class="container">
 
-    <!-- Sujet 1 -->
+    <!-- MÉTHODOLOGIE -->
     <div class="topic" onclick="toggleContent(this)">
-        <h2>Riba (Usure)</h2>
+        <h2>Méthodologie du Tarjīḥ</h2>
         <div class="content">
 
-            <div class="section-title">1. Définition</div>
-            Augmentation spécifique interdite dans certaines transactions définies par les textes.
+            <div class="section-title">1. Hiérarchie des preuves</div>
+            - Coran  
+            - Sunna authentique  
+            - Consensus (Ijma')  
+            - Qiyās  
 
-            <div class="section-title">2. Textes fondamentaux</div>
-            - Sourate Al-Baqara 275-279  
-            - Hadith des six catégories (Muslim)
+            <div class="section-title">2. Critères de pondération</div>
+            - Authenticité du hadith  
+            - Clarté du texte (صريح vs محتمل)  
+            - Généralité vs spécificité  
+            - Abrogation éventuelle  
+            - Compréhension des Compagnons  
 
-            <div class="section-title">3. Avis des écoles</div>
-            Résumé synthétique des positions des quatre madhahib.
-
-            <div class="section-title">4. Avis retenu</div>
-            Interdiction des intérêts bancaires contemporains.
-
-            <div class="section-title">5. Arguments</div>
-            - Généralité du texte coranique  
-            - Qiyās sur riba an-nasi'ah  
-            - Absence de distinction textuelle entre ancien et moderne  
-
-            <div class="section-title">6. Tarjīḥ</div>
-            L’avis apparaît plus fort en raison de la clarté des textes et du principe سد الذرائع.
+            <div class="section-title">3. Principes juridiques utilisés</div>
+            - سد الذرائع  
+            - رفع الحرج  
+            - اليقين لا يزول بالشك  
 
         </div>
     </div>
 
-    <!-- Sujet 2 -->
+    <!-- RIBA -->
+    <div class="topic" onclick="toggleContent(this)">
+        <h2>Riba (Usure)</h2>
+        <div class="content">
+
+            <div class="section-title">Textes coraniques</div>
+
+            <blockquote>
+                "Allah a permis le commerce et interdit l'usure."
+                <div class="reference">Sourate Al-Baqara 2:275</div>
+            </blockquote>
+
+            <blockquote>
+                "Ô vous qui croyez ! Craignez Allah et renoncez au reliquat de l'usure."
+                <div class="reference">Sourate Al-Baqara 2:278</div>
+            </blockquote>
+
+            <div class="section-title">Hadith fondamental</div>
+
+            <blockquote>
+                "L'or contre l'or, l'argent contre l'argent... égal pour égal, main à main."
+                <div class="reference">Sahih Muslim, n°1587</div>
+            </blockquote>
+
+            <div class="section-title">Avis retenu</div>
+            L'intérêt bancaire contemporain entre dans la généralité du riba an-nasi'ah.
+
+            <div class="section-title">Arguments</div>
+            - Généralité absolue du verset  
+            - Analogie directe avec riba préislamique  
+            - Consensus contemporain des académies juridiques  
+
+            <div class="section-title">Tarjīḥ</div>
+            L'avis apparaît prépondérant en raison de la clarté des textes et de l'absence de preuve limitative.
+
+        </div>
+    </div>
+
+    <!-- VOILE -->
     <div class="topic" onclick="toggleContent(this)">
         <h2>Voile</h2>
         <div class="content">
 
-            <div class="section-title">1. Textes</div>
-            Sourate An-Nur 31, Al-Ahzab 59.
+            <div class="section-title">Preuve coranique</div>
 
-            <div class="section-title">2. Divergences</div>
+            <blockquote>
+                "Et qu'elles rabattent leur voile sur leurs poitrines."
+                <div class="reference">Sourate An-Nur 24:31</div>
+            </blockquote>
+
+            <blockquote>
+                "Ô Prophète ! Dis à tes épouses... de ramener sur elles leurs grands voiles."
+                <div class="reference">Sourate Al-Ahzab 33:59</div>
+            </blockquote>
+
+            <div class="section-title">Divergence</div>
             Visage inclus ou non.
 
-            <div class="section-title">3. Avis retenu</div>
+            <div class="section-title">Avis retenu</div>
             Obligation du hijab couvrant tout sauf visage et mains.
 
-            <div class="section-title">4. Tarjīḥ</div>
-            Pondération basée sur la compréhension des compagnons et la pratique majoritaire.
+            <div class="section-title">Tarjīḥ</div>
+            Pondération basée sur la compréhension majoritaire des juristes classiques.
 
         </div>
     </div>
@@ -150,13 +208,20 @@
 </div>
 
 <footer>
-    Projet personnel d’étude – Version 1.0
+    Projet personnel d’étude – Version 2.0
 </footer>
 
 <script>
 function toggleContent(element) {
     const content = element.querySelector(".content");
-    content.style.display = content.style.display === "block" ? "none" : "block";
+
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("open");
+    }
 }
 </script>
 
