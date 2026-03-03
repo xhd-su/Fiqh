@@ -9,93 +9,103 @@
     body {
         margin: 0;
         font-family: "Georgia", serif;
-        background-color: #0b2e24; /* vert plus foncé */
-        color: #fff4b8; /* texte plus lumineux */
-        line-height: 1.7;
+        background-color: #08261d; /* vert très profond */
+        color: #f8e7a1; /* doré lumineux doux */
+        line-height: 1.8;
     }
 
     header {
         text-align: center;
-        padding: 50px 20px;
-        border-bottom: 1px solid rgba(255, 244, 184, 0.2);
+        padding: 60px 20px;
+        border-bottom: 1px solid rgba(248, 231, 161, 0.25);
     }
 
     h1 {
         margin: 0;
-        font-size: 2.2rem;
-        letter-spacing: 1px;
+        font-size: 2.4rem;
+        letter-spacing: 2px;
     }
 
     .subtitle {
+        margin-top: 15px;
         font-size: 1rem;
         opacity: 0.85;
-        margin-top: 12px;
+    }
+
+    .intro {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: #0e3328;
+        border-left: 5px solid #f8e7a1;
+        border-radius: 8px;
     }
 
     .container {
         max-width: 950px;
         margin: auto;
-        padding: 50px 20px;
+        padding: 20px;
     }
 
     .topic {
-        background-color: #113c2f;
-        margin-bottom: 25px;
-        padding: 25px;
-        border-radius: 10px;
+        background-color: #0f352a;
+        margin-bottom: 30px;
+        padding: 30px;
+        border-radius: 12px;
         cursor: pointer;
-        transition: 0.3s ease;
+        transition: 0.4s ease;
         overflow: hidden;
+        border: 1px solid rgba(248, 231, 161, 0.15);
     }
 
     .topic:hover {
-        background-color: #164a3a;
+        background-color: #144436;
     }
 
     .topic h2 {
         margin: 0;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.6s ease, opacity 0.4s ease;
+        transition: max-height 0.7s ease, opacity 0.5s ease;
         opacity: 0;
     }
 
     .content.open {
         opacity: 1;
-        margin-top: 20px;
+        margin-top: 25px;
     }
 
     .section-title {
-        margin-top: 25px;
+        margin-top: 30px;
         font-weight: bold;
-        color: #ffe97a;
+        color: #ffe27a;
     }
 
     blockquote {
-        margin: 15px 0;
-        padding: 15px;
-        background-color: #0f352a;
-        border-left: 4px solid #ffe97a;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #08261d;
+        border-left: 4px solid #ffe27a;
         font-style: italic;
     }
 
     .reference {
         font-size: 0.85rem;
         opacity: 0.8;
-        margin-top: 5px;
+        margin-top: 8px;
     }
 
     footer {
         text-align: center;
-        padding: 40px;
-        font-size: 0.85rem;
+        padding: 50px;
+        font-size: 0.9rem;
         opacity: 0.6;
-        border-top: 1px solid rgba(255, 244, 184, 0.2);
-        margin-top: 50px;
+        border-top: 1px solid rgba(248, 231, 161, 0.2);
+        margin-top: 70px;
     }
 
 </style>
@@ -104,103 +114,116 @@
 <body>
 
 <header>
-    <h1>Mémoire de Jurisprudence Islamique</h1>
+    <h1>مذكرة في الفقه</h1>
     <div class="subtitle">
-        Étude personnelle – Preuves – Divergences – Tarjīḥ
+        Mémoire personnelle de jurisprudence islamique  
+        Étude – Preuves – Divergences – Tarjīḥ
     </div>
 </header>
 
+<div class="intro">
+    Louange à Allah, Seigneur des mondes.  
+    Que la prière et le salut soient sur le Messager d’Allah ﷺ, sa famille et l’ensemble de ses compagnons.
+
+    <br><br>
+
+    Cette plateforme constitue un travail personnel d’étude en jurisprudence islamique (fiqh).  
+    Elle vise à rassembler les preuves textuelles, exposer les divergences juridiques et exercer un effort de pondération (tarjīḥ) selon une méthodologie structurée.
+
+    <br><br>
+
+    Les principes suivis sont :
+    <br>
+    - Priorité au Coran et à la Sunna authentique  
+    - Compréhension des Compagnons  
+    - Référence aux écoles juridiques reconnues  
+    - Distinction entre texte explicite et interprétation  
+    - Exposition équitable des avis divergents  
+
+    <br><br>
+
+    Ce travail n’est pas une fatwa, mais une recherche personnelle visant à approfondir la compréhension des preuves et des principes juridiques.
+</div>
+
 <div class="container">
 
-    <!-- MÉTHODOLOGIE -->
+    <!-- METHODOLOGIE -->
     <div class="topic" onclick="toggleContent(this)">
         <h2>Méthodologie du Tarjīḥ</h2>
         <div class="content">
 
-            <div class="section-title">1. Hiérarchie des preuves</div>
+            <div class="section-title">Hiérarchie des preuves</div>
             - Coran  
             - Sunna authentique  
-            - Consensus (Ijma')  
+            - Ijmā‘  
             - Qiyās  
 
-            <div class="section-title">2. Critères de pondération</div>
-            - Authenticité du hadith  
-            - Clarté du texte (صريح vs محتمل)  
-            - Généralité vs spécificité  
-            - Abrogation éventuelle  
-            - Compréhension des Compagnons  
-
-            <div class="section-title">3. Principes juridiques utilisés</div>
-            - سد الذرائع  
-            - رفع الحرج  
-            - اليقين لا يزول بالشك  
+            <div class="section-title">Critères de pondération</div>
+            - Authenticité  
+            - Clarté textuelle  
+            - Généralité / spécificité  
+            - Abrogation  
+            - Compréhension des Salaf  
 
         </div>
     </div>
 
-    <!-- RIBA -->
+    <!-- BARBE -->
     <div class="topic" onclick="toggleContent(this)">
-        <h2>Riba (Usure)</h2>
+        <h2>La Barbe</h2>
         <div class="content">
 
-            <div class="section-title">Textes coraniques</div>
-
             <blockquote>
-                "Allah a permis le commerce et interdit l'usure."
-                <div class="reference">Sourate Al-Baqara 2:275</div>
-            </blockquote>
-
-            <blockquote>
-                "Ô vous qui croyez ! Craignez Allah et renoncez au reliquat de l'usure."
-                <div class="reference">Sourate Al-Baqara 2:278</div>
-            </blockquote>
-
-            <div class="section-title">Hadith fondamental</div>
-
-            <blockquote>
-                "L'or contre l'or, l'argent contre l'argent... égal pour égal, main à main."
-                <div class="reference">Sahih Muslim, n°1587</div>
+                "Laissez pousser les barbes et taillez les moustaches."
+                <div class="reference">Sahih al-Bukhari, n°5892</div>
             </blockquote>
 
             <div class="section-title">Avis retenu</div>
-            L'intérêt bancaire contemporain entre dans la généralité du riba an-nasi'ah.
-
-            <div class="section-title">Arguments</div>
-            - Généralité absolue du verset  
-            - Analogie directe avec riba préislamique  
-            - Consensus contemporain des académies juridiques  
+            Obligation de laisser pousser la barbe.
 
             <div class="section-title">Tarjīḥ</div>
-            L'avis apparaît prépondérant en raison de la clarté des textes et de l'absence de preuve limitative.
+            Impératif prophétique explicite non limité par un contexte particulier.
 
         </div>
     </div>
 
-    <!-- VOILE -->
+    <!-- METIERS POLITIQUES -->
     <div class="topic" onclick="toggleContent(this)">
-        <h2>Voile</h2>
+        <h2>Métiers politiques, juridiques et législatifs</h2>
         <div class="content">
 
-            <div class="section-title">Preuve coranique</div>
-
             <blockquote>
-                "Et qu'elles rabattent leur voile sur leurs poitrines."
-                <div class="reference">Sourate An-Nur 24:31</div>
+                "Et juge entre eux d'après ce qu'Allah a révélé."
+                <div class="reference">Sourate Al-Ma'idah 5:48</div>
             </blockquote>
 
-            <blockquote>
-                "Ô Prophète ! Dis à tes épouses... de ramener sur elles leurs grands voiles."
-                <div class="reference">Sourate Al-Ahzab 33:59</div>
-            </blockquote>
+            <div class="section-title">Position étudiée</div>
+            Interdiction d’exercer une fonction impliquant l’établissement ou l’application de lois contraires à la révélation.
 
-            <div class="section-title">Divergence</div>
-            Visage inclus ou non.
-
-            <div class="section-title">Avis retenu</div>
-            Obligation du hijab couvrant tout sauf visage et mains.
+            <div class="section-title">Argument central</div>
+            Serment d’allégeance constitutionnelle et primauté des lois humaines.
 
             <div class="section-title">Tarjīḥ</div>
-            Pondération basée sur la compréhension majoritaire des juristes classiques.
+            Pondération basée sur le principe de souveraineté législative divine (الحاكمية).
+
+        </div>
+    </div>
+
+    <!-- COUPES DE CHEVEUX -->
+    <div class="topic" onclick="toggleContent(this)">
+        <h2>Coupes de cheveux</h2>
+        <div class="content">
+
+            <blockquote>
+                Le Prophète ﷺ a interdit le qaza‘.
+                <div class="reference">Sahih Muslim, n°2120</div>
+            </blockquote>
+
+            <div class="section-title">Définition</div>
+            Raser une partie de la tête et laisser une autre.
+
+            <div class="section-title">Avis retenu</div>
+            Interdiction du qaza‘, autorisation des coupes uniformes.
 
         </div>
     </div>
@@ -208,7 +231,7 @@
 </div>
 
 <footer>
-    Projet personnel d’étude – Version 2.0
+    Version 3.0 – Manuscrit d’étude personnel
 </footer>
 
 <script>
